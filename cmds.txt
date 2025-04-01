@@ -1,0 +1,14 @@
+npm init playwright@latest
+npm install @faker-js/faker dotenv @types/node ts-node prettier eslint --save-dev
+ Above cmd explanation given below: 
+  npm install @faker-js/faker --save-dev >> Used to generate fake data (e.g., names, emails, phone numbers) for testing purposes.
+  npm install dotenv --save-dev >>  Loads environment variables from a .env file into process.env—helps manage secrets/configs securely.Keeps sensitive data out of code.
+  npm install @types/node --save-dev >> Provides TypeScript type definitions for Node.js built-in modules (like fs, path, etc.).enabling type checking and IntelliSense in TypeScript.
+  npm install ts-node --save-dev >> Lets you run TypeScript files directly using Node.js without needing to compile them to JavaScript first.
+  npm install prettier --save-dev >> Automatically formats your code with consistent style (spacing, quotes, semicolons, etc.).
+  npm install eslint --save-dev >> Analyzes your code to catch errors and enforce coding standards or best practices.
+
+ 
+
+
+
