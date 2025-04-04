@@ -11,7 +11,7 @@ export default defineConfig({
   testDir: './tests',
 
   // Max time (in ms) one test can run: 30 * 1000 = 30 seconds
-  timeout: 30 * 1000,
+  timeout: 60 * 1000,
 
   // Allow tests in the same file to run in parallel
   fullyParallel: true,

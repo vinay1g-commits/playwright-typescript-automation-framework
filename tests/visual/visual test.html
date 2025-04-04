@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visual Testing Playground</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      width: 250px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .dropdown {
+      margin: 20px 0;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #444;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Visual Regression Test Page</header>
+
+  <section>
+    <p>This page contains various UI elements for visual testing.</p>
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Card One</h3>
+        <p>This is a simple card with text content.</p>
+      </div>
+      <div class="card">
+        <h3>Card Two</h3>
+        <p>Another card with some different content.</p>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <label for="select-test">Choose a category:</label><br/>
+      <select id="select-test">
+        <option value="functional">Functional</option>
+        <option value="ui">UI</option>
+        <option value="api">API</option>
+        <option value="performance">Performance</option>
+      </select>
+    </div>
+
+    <button class="btn" onclick="alert('Visual Test Button Clicked')">Test Button</button>
+  </section>
+
+  <footer>&copy; 2025 Visual Testing Playground</footer>
+
+</body>
+</html>

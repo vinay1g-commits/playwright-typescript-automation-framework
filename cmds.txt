@@ -7,6 +7,11 @@ npm install @faker-js/faker dotenv @types/node ts-node prettier eslint --save-de
   npm install ts-node --save-dev >> Lets you run TypeScript files directly using Node.js without needing to compile them to JavaScript first.
   npm install prettier --save-dev >> Automatically formats your code with consistent style (spacing, quotes, semicolons, etc.).
   npm install eslint --save-dev >> Analyzes your code to catch errors and enforce coding standards or best practices.
+visual Test Execution CMDs:
+1.Run test for first-time snapshot (generates baseline):
+  npx playwright test tests/visual/homepage.visual.spec.ts --update-snapshots
+2.For subsequent runs (to detect visual regressions):
+  npx playwright test tests/visual/homepage.visual.spec.ts
 
  
 
