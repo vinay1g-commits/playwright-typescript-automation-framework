@@ -6,7 +6,7 @@ test.describe("Authentication Tests",()=>{
     await expect(page.locator('p')).toHaveText(/Congratulations/);//for matching partial text is given here 'Congratualtions' using regex(regular expressions)
     })
   
-    test.only("Session persistence using storage State",async({browser})=>{
+    test("Session persistence using storage State",async({browser})=>{
       const context=await browser.newContext();
       const page=await context.newPage();
       await page.goto('https://www.saucedemo.com/');
