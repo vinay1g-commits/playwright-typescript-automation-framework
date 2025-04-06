@@ -23,7 +23,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   // Limit workers to 1 in CI; use all CPU cores locally
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
 
   // Configure test result reporting
   reporter: [
