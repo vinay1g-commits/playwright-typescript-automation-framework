@@ -26,7 +26,3 @@ import testData from '../../data/testData.json';
     }  
   })
 
-/*
-for of loop is used here:for each data item > Goto login page > perform login with username,password > if shouldLogin is true,check for successful login. else if flase then check for login error message.
-
-*/

@@ -27,8 +27,3 @@ test.describe("API testing with reqres",()=>{
   });
 });
 
-/*
-Logic: for get request we saw following via reqbin:
-"page": 2,
-"data": [ {...}, {...}, ... ] // 6 users
-*/
