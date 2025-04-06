@@ -14,6 +14,7 @@ export class LoginPage{
     await this.page.locator("#login-button").click();
   }
   async getLoginError(){
-    return this.page.locator('data-test="error"');
+    return this.page.locator('[data-test="error"]'); // Brackets needed
+
   }
 }
