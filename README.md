@@ -6,14 +6,15 @@ A **production-ready**, robust, and comprehensive test automation framework buil
 
 ## 🚀 Key Features
 
-- ✅ **Modular Design**: Page Object Model (POM) for reusable and maintainable code.
-- ✅ **Data-Driven Testing**: Clearly structured JSON-based datasets.
-- ✅ **API Testing**: Real API tests with built-in Playwright request context.
-- ✅ **Visual Regression Testing**: Automatic visual testing with snapshot comparisons.
-- ✅ **Authentication and Session Management**: Tests for basic auth and session persistence.
-- ✅ **CI/CD Integration**: Continuous testing with GitHub Actions.
-- ✅ **Accessibility Testing**: Tests ensuring inclusive web application design.
-- ✅ **Performance Testing**: Validating page load and API response performance.
+- **Modular Design**: Page Object Model (POM) for reusable and maintainable code.
+- **Data-Driven Testing**: Clearly structured JSON-based datasets.
+- **API Testing**: Real API tests with built-in Playwright request context.
+- **Visual Regression Testing**: Automatic visual testing with snapshot comparisons.
+- **Authentication and Session Management**: Tests for basic auth and session persistence.
+- **CI/CD Integration**: Continuous testing with GitHub Actions.
+- **Accessibility Testing**: Tests ensuring inclusive web application design.
+- **Performance/Load Testing**: Validating page load and API response performance.
+- **Database MySql Testing**: Validating Database Table Data.
 
 ---
 
@@ -125,8 +126,6 @@ This project is integrated with GitHub Actions. Tests run automatically upon pus
 
 - Extend API tests coverage (authentication, CRUD operations).
 - Integrate more accessibility checks with automated reports.
-- Enhance performance tests with advanced metrics and monitoring.
-- Add Docker support for environment consistency.
 
 ---
 

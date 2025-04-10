@@ -1,0 +1,14 @@
+config:
+  target: "https://www.saucedemo.com"
+  phases:
+    - duration: 60
+      arrivalRate: 10   # 10 users every second for 60s (600 users total)
+    - duration: 120
+      arrivalRate: 20   # Ramp-up to 20 users per second
+    - duration: 60
+      arrivalRate: 0    # Ramp-down to 0 users
+
+scenarios:
+  - flow:
+      - get:
+          url: "/"
