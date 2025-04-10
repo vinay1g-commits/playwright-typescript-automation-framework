@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                         // Modern JS features
+    "module": "ESNext",                         // Needed for Playwright and tools like Babel
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],                   // Supports browser + async features
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,                             // Strong typing rules (good for testing)
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,                  // Allows importing JSON test data
+    "types": ["node", "playwright"],
+    "outDir": "dist",                           // Optional: Used if you compile with `tsc`
+    "rootDir": "."                              // Your project root
+  },
+  "include": ["tests", "pages", "utils", "global.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

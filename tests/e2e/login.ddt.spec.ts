@@ -1,5 +1,5 @@
 /*
-Data driven testing involves executing same set of actions with multipole datasets.making tests scalable,maintainable,realistic by seperating test data from test logic.
+Data driven testing involves executing same set of actions with multiple datasets.making tests scalable,maintainable,realistic by seperating test data from test logic.
 */
 import {test,expect} from '@playwright/test';
 import {LoginPage} from '../../pages/LoginPage';
