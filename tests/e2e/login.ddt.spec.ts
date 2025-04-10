@@ -4,7 +4,8 @@ Data driven testing involves executing same set of actions with multiple dataset
 import {test,expect} from '@playwright/test';
 import {LoginPage} from '../../pages/LoginPage';
 import { InventoryPage } from '../../pages/InventoryPage';
-import testData from '../../data/testData.json';
+import testData from '../../data/testData.json' assert { type: 'json' };
+
 
 
   test.describe("Data driven Login Tests",()=>{
