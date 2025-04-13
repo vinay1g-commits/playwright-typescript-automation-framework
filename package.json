@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "load": "npx artillery run tests/performance/artillery-test.yml -o artillery-report.json",
+    "load": "npx artillery run tests/performance/artillery-test2.yml -o artillery-report.json",
     "report": "npx artillery report artillery-report.json --output artillery-report.html"
   },
   "keywords": [],

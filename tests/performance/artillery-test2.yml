@@ -1,0 +1,15 @@
+config:
+  target: "https://www.saucedemo.com"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+  processor: "./customLogic.mjs"
+
+scenarios:
+  - name: "Dynamic Login With test data"
+    flow:
+      - post:
+          url: "/login"
+          json:
+            username: "{{ username }}"
+            password: "{{ password }}"
