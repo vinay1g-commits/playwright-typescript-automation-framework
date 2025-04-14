@@ -37,6 +37,7 @@ jobs:
   artillery-load-tests:
     runs-on: ubuntu-latest
     needs: playwright-tests
+    if: always()  # This forces it to run regardless of previous job result
     steps:
       - uses: actions/checkout@v4
 
