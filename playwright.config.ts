@@ -20,7 +20,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
 
   // Number of retries for failed tests (2 in CI, 0 locally)
-  retries: process.env.CI ? 2 : 1,
+  retries: process.env.CI ? 2 : 0,
 
   // Limit workers to 1 in CI; use all CPU cores locally
   workers: process.env.CI ? 2 : undefined,
