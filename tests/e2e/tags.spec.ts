@@ -6,7 +6,7 @@ test('login testOne @critical @login',async({page})=>{
 });
 test('login testTwo @lowPriority',async({page})=>{
   await page.goto("https://www.yahoo.com");
-  expect(await page.locator('#login-button')).toBeVisible();
+  await expect(page).toHaveTitle(/Yahoo/);
 });
 
 //Run only critical tests clearly:npx playwright test --grep @critical

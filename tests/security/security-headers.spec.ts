@@ -1,6 +1,3 @@
-// ✅ Pass   ❌ Fail   🛑 Fatal   🔍 Inspect   ⚠️ Warning
-
-
 import {test,expect} from '@playwright/test';
 const domains=[
   "https://www.saucedemo.com",
