@@ -24,6 +24,7 @@
     "@types/k6": "^1.0.2",
     "@types/node": "^22.13.15",
     "artillery": "^2.0.21",
+    "devtools-protocol": "^0.0.1446921",
     "dotenv": "^16.4.7",
     "esbuild": "^0.25.2",
     "eslint": "^9.23.0",

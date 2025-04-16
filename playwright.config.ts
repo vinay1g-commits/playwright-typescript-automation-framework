@@ -25,6 +25,7 @@ export default defineConfig({
   // Limit workers to 1 in CI; use all CPU cores locally
   workers: process.env.CI ? 2 : undefined,
 
+
   // Configure test result reporting
   reporter: [
     [
@@ -55,6 +56,7 @@ export default defineConfig({
 
     // Retain trace only for failed tests (great for debugging)
     trace: 'retain-on-failure',
+
   },
 
   // Define which browsers and devices to run tests on
