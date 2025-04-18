@@ -21,15 +21,15 @@ test('✅ Broken Link Check with Best Practices', async ({ page, request }) => {
       const status = res.status();
 
       if (res.ok()) {
-        console.log(`✅ ${link} => ${status}`);
+        console.log(` ${link} => ${status}`);
       } else {
-        console.warn(`❌ ${link} => ${status}`);
+        console.warn(` ${link} => ${status}`);
       }
 
-      expect(res.ok()).toBeTruthy(); // Fails test if false
+      expect(res.ok()).toBeTruthy(); 
     } catch (err) {
-      console.error(`🔥 Error checking ${link}:`, err);
-      throw err; // Fail the test explicitly
+      console.error(` Error checking ${link}:`, err);
+      throw err; 
     }
   }
 });

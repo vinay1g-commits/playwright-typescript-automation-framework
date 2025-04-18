@@ -1,56 +1,52 @@
-import {test,expect} from '@playwright/test';
-const domains=[
+import { test, expect } from '@playwright/test';
+
+const domains = [
   "https://www.saucedemo.com",
   "https://www.youtube.com",
   "https://www.wikipedia.org"
 ];
-test.describe("security test",()=>{
-  domains.forEach((domain)=>{
-    test(`security header checks for ${domain}`,async({request})=>{
-      const response=await request.get(domain);
-      const headers=response.headers();
 
-      const errors: string[] = []; 
+test.describe("Security Headers Check", () => {
+  domains.forEach(domain => {
+    test(`Checking security headers for ${domain}`, async ({ request }) => {
 
-      console.log(`headers for ${domain} are:`);
-      for(const [key,value] of Object.entries(headers)){
-        console.log(`${key}:${value}`);
-      }
-      // Collect errors instead of failing immediately
-      if ((headers['x-content-type-options'] ?? '') !== 'nosniff') {
-        errors.push(`❌ x-content-type-options: expected "nosniff", got "${headers['x-content-type-options'] ?? 'MISSING'}"`);
-      }
+      const response = await request.get(domain);
+      const headers = response.headers();
 
-      if (!/DENY|SAMEORIGIN/.test(headers['x-frame-options'] ?? '')) {
-        errors.push(`❌ x-frame-options: expected "DENY" or "SAMEORIGIN", got "${headers['x-frame-options'] ?? 'MISSING'}"`);
-      }
+      console.log(`\nHeaders from ${domain}:`);
+      Object.entries(headers).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+      });
 
-      if (!headers['content-security-policy']) {
-        errors.push(`❌ content-security-policy header is missing or empty`);
-      }
+      // x-content-type-options
+      expect.soft(headers['x-content-type-options'], `'x-content-type-options' header missing for ${domain}`)
+        .toBe('nosniff');
 
-      if (!(headers['strict-transport-security'] ?? '').includes('max-age')) {
-        errors.push(`❌ strict-transport-security: must include "max-age", got "${headers['strict-transport-security'] ?? 'MISSING'}"`);
-      }
+      // x-frame-options
+      expect.soft(headers['x-frame-options'], `'x-frame-options' header missing for ${domain}`)
+        .toMatch(/DENY|SAMEORIGIN/);
 
-      if (!/(no-referrer|strict-origin-when-cross-origin|same-origin)/.test(headers['referrer-policy'] ?? '')) {
-        errors.push(`❌ referrer-policy: expected strict policy, got "${headers['referrer-policy'] ?? 'MISSING'}"`);
-      }
+      // content-security-policy
+      expect.soft(headers['content-security-policy'], `'content-security-policy' header missing for ${domain}`)
+        .toBeDefined();
 
-      if (!headers['permissions-policy']) {
-        errors.push(`❌ permissions-policy header is missing or empty`);
-      }
+      // strict-transport-security
+      expect.soft(headers['strict-transport-security'], `'strict-transport-security' header missing for ${domain}`)
+        .toContain('max-age');
 
-      if (!/(no-store|private|no-cache)/.test(headers['cache-control'] ?? '')) {
-        errors.push(`❌ cache-control: expected "no-store", "private" or "no-cache", got "${headers['cache-control'] ?? 'MISSING'}"`);
-      }
+      // referrer-policy
+      expect.soft(headers['referrer-policy'], `'referrer-policy' header missing for ${domain}`)
+        .toMatch(/no-referrer|strict-origin-when-cross-origin|same-origin/);
 
-      // Final assertion
-      if (errors.length > 0) {
-        throw new Error(`🛑 Security header check failed for ${domain}:\n` + errors.join('\n'));
-      } else {
-        console.log(`✅ All required headers are present and valid for ${domain}`);
-      }
+      // permissions-policy
+      expect.soft(headers['permissions-policy'], `'permissions-policy' header missing for ${domain}`)
+        .toBeDefined();
+
+      // cache-control
+      expect.soft(headers['cache-control'], `'cache-control' header missing or incorrect for ${domain}`)
+        .toMatch(/no-store|private|no-cache/);
+
+      console.log(`✅ Completed security header check for ${domain}`);
     });
   });
 });
