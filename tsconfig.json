@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "resolveJsonModule": true,                  // Allows importing JSON test data
-    "types": ["node", "playwright"],
+    "types": ["node", "@playwright/test"],
     "outDir": "dist",                           // Optional: Used if you compile with `tsc`
     "rootDir": "."                              // Your project root
   },
